@@ -13,16 +13,18 @@ package cse360assign2;
 public class Calculator {
 
     private int total;
-
+    private String history;
     /**
-     * Only constructor of the Calculator class that initializes the total of the calculations to 0.
+     * Only constructor of the Calculator class that initializes the total of the calculations to 0
+     * and initializes the history with 0 to start.
      */
     public Calculator () {
         total = 0;  // not needed - included for clarity
+        history = "0";
     }
 
     /**
-     * The getTotal method should return the current result of all the calculations done together.
+     * The getTotal method returns the current result of all the calculations done together.
      * @return the current result of all the calculations done together.
      */
     public int getTotal () {
@@ -35,6 +37,7 @@ public class Calculator {
      */
     public void add (int value) {
         total = total + value;
+        history = history + " + " + value;
     }
 
     /**
@@ -43,6 +46,7 @@ public class Calculator {
      */
     public void subtract (int value) {
         total = total - value;
+        history = history + " - " + value;
     }
 
     /**
@@ -51,6 +55,7 @@ public class Calculator {
      */
     public void multiply (int value) {
         total = total * value;
+        history = history + " * " + value;
     }
 
     /**
@@ -66,6 +71,7 @@ public class Calculator {
         else {
             total = total / value;
         }
+        history = history + " / " + value;
     }
 
     /**
@@ -73,6 +79,6 @@ public class Calculator {
      * @return the history of the previous calculations that were done.
      */
     public String getHistory () {
-        return "";
+        return history;
     }
 }
