@@ -23,10 +23,10 @@ public class Calculator {
 
     /**
      * The getTotal method should return the current result of all the calculations done together.
-     * @return the current result of all the calculations done together but only returns 0 for now.
+     * @return the current result of all the calculations done together.
      */
     public int getTotal () {
-        return 0;
+        return total;
     }
 
     /**
@@ -34,7 +34,7 @@ public class Calculator {
      * @param value is the integer taken from a user and is to be added to the current total.
      */
     public void add (int value) {
-
+        total = total + value;
     }
 
     /**
@@ -42,7 +42,7 @@ public class Calculator {
      * @param value is the integer taken from a user and is to be subtracted to the current total.
      */
     public void subtract (int value) {
-
+        total = total - value;
     }
 
     /**
@@ -50,15 +50,22 @@ public class Calculator {
      * @param value is the integer take from a user and is to be multiplied to the current total.
      */
     public void multiply (int value) {
-
+        total = total * value;
     }
 
     /**
-     * The divide method accepts an integer value and should divide that value to the current total.
-     * @param value is the intger take from a user and is to be divided to the current total.
+     * The divide method accepts an integer value and should divide that value to the current total but in the case
+     * the parameter value is 0, then the total will be set to 0 as well.
+     * @param value is the integer take from a user and is to be divided to the current total except the case
+     *              when the parameter is 0, then total will be set to 0.
      */
     public void divide (int value) {
-
+        if (value == 0) {
+            total = 0;
+        }
+        else {
+            total = total / value;
+        }
     }
 
     /**
